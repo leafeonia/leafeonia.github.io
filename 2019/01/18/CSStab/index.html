@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>HTML+CSS实现彩色文件夹页面切换效果 | Leafeon&#39;s Place</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="正在施工中~">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HTML+CSS实现彩色文件夹页面切换效果 | Leafeon&#39;s Place">
+    <meta name="twitter:description" content="正在施工中~">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HTML+CSS实现彩色文件夹页面切换效果 | Leafeon&#39;s Place">
+    <meta property="og:description" content="正在施工中~">
+
+    
+    <meta name="author" content="leafeonia">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://leafeonia.github.io/2019/01/18/CSStab/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Leafeon&#39;s Place 的主页"><img src="/images/avatar.jpg" width="80" alt="Leafeon&#39;s Place logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Leafeon&#39;s Place">Leafeon&#39;s Place</a></h1>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">正在施工中~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/garden/garden.html">后花园</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/leafeonia" title="GitHub" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-01-18T09:51:24.238Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/前端/">前端</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">HTML+CSS实现彩色文件夹页面切换效果</h1>
+  </header>
+
+  <section class="post">
+    <p>初学HTML和CSS，了解了一些基本概念之后觉得还是通过搞事学习比较有意思</p>
+<p>然后发现了一个神奇好用的前端案例网站 <a href="http://thecodeplayer.com/" target="_blank" rel="noopener">http://thecodeplayer.com/</a> </p>
+<p>基于里面的一个例子进行理解和模仿，最终生成了一个<a href="/front-end/CSStab.html">具有文件夹页面切换效果的网页</a> (部分版本的IE浏览器可能无法正常显示)</p>
+<p>以下是简要的制作流程：</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>这两天稍微理解了一些前端语言之间的关系，如果把制作网页看成是搭一间房子，那么HTML作为描述网页结构的工具，就是钢筋混凝土骨架，而CSS样式表则是进行精细的内部装修。因此，首先要完成HTML的构建。这个例子中，网页实际可操作的内容并不多，实际上主要元素只是左侧的4个选择区和右侧的显示块主体。选择区可以用radio单选框实现，而右侧的主体部分实际上可以视为互相覆盖的4个块，即4个不同的div。因此，HTML的内容并不复杂（然而即使这么简单后来还是发现了bug，接下来会解释）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;CSS colorful tab&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; checked=&quot;checked&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>代码很简单，效果也很苍白orz</p>
+<p><br><br><img src="/images/CSStab/1.png" alt="img1"><br><br></p>
+<h2 id="CSS-基本结构"><a href="#CSS-基本结构" class="headerlink" title="CSS:基本结构"></a>CSS:基本结构</h2><p>所以接下来CSS的内容才是关键。首先既然要将div作为占满屏幕的块，那么就要将其样式设置为占满全屏。通过nth-of-type选择器为4个div块分别设置不同底色，由于目前并没有切换效果，所以第4个div块会覆盖其他元素并占满全屏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br><span class="line">div:nth-of-type(1)&#123;</span><br><span class="line">    background-color: darkorchid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-of-type(2)&#123;</span><br><span class="line">    background-color: aquamarine;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-of-type(3)&#123;</span><br><span class="line">    background-color: coral;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-of-type(4)&#123;</span><br><span class="line">    background-color: wheat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br><img src="/images/CSStab/2.png" alt="img2"><br><br></p>
+<p>此时div块将4个单选框也一并覆盖了。因此接下来需要设置单选框的样式。设置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">input&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 25%;</span><br><span class="line">    outline: 10px solid ;</span><br><span class="line">    outline-offset: -10px;</span><br><span class="line">    margin: 0;</span><br><span class="line">    z-index: 1;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(1)&#123;</span><br><span class="line">    outline-color: darkorchid;</span><br><span class="line">    top: 0%;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(2)&#123;</span><br><span class="line">    outline-color: aquamarine;</span><br><span class="line">    top: 25%;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(3)&#123;</span><br><span class="line">    outline-color: coral;</span><br><span class="line">    top: 50%;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(4)&#123;</span><br><span class="line">    outline-color: wheat;</span><br><span class="line">    top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br><img src="/images/CSStab/3.png" alt="img3"><br><br></p>
+<p>这里有几个比较关键的属性。</p>
+<p><br></p>
+<ul>
+<li>outline和outline-offset</li>
+</ul>
+<p><code>outline</code>属性指定了边框的样式，而<code>outline-offset</code>属性设置边框的偏移量。当outline-offset为-10时，相当于边框在原边框基础上向内收缩了10px，而<code>outline</code>又被设置为宽度为10px的solid填充，因此这两个属性实际上起到了纯色填充的效果。至于具体填充什么颜色，交由<code>nth-of-type</code>选择器进行设置。</p>
+<p>为了更好地理解这两个属性的作用，尝试把<code>outline-offset</code>设置为-5，效果如下：</p>
+<p><br><br><img src="/images/CSStab/4.png" alt="img4"><br><br></p>
+<p>可以很明显地看出，相对于20px的宽度，-5px的缩进只能填充一半的内容。</p>
+<p><br></p>
+<ul>
+<li>z-index</li>
+</ul>
+<p><code>z-index</code>我个人觉得可以用类似于ppt中“向下一层”、“置于顶层”的观点进行理解。<code>z-index</code>大的元素优先置于顶层，这里将单选框的<code>z-index</code>置为1或者任意正数皆可，因不存在其他z-index更高的元素。因为单选框的<code>z-index</code>大于div,因此左侧的4个选择区始终会出现在div块上方而不会被覆盖。如果将<code>z-index</code>设置成0，那么屏幕上又只有单调的纯色块了。</p>
+<p><br></p>
+<ul>
+<li>cursor</li>
+</ul>
+<p>当鼠标放到选择区时，应把箭头图标变为小手图标以进行指示，将<code>cursor</code>设置为<code>pointer</code>即可起到这一效果。</p>
+<h2 id="CSS：切换效果"><a href="#CSS：切换效果" class="headerlink" title="CSS：切换效果"></a>CSS：切换效果</h2><p>在CSS中，切换使用<code>transform</code>属性,这里我们只需要使用<code>transform</code>中的<code>translateX</code>（沿X轴方向平移）即可。如<code>transform: translateX(-100%)</code>表示将元素向左平移一个窗口的距离，也就是完全移出去。这里的括号内的内容应该始终是相对于初始窗口的位置而言的，即对于一个<code>translateX(-100%)</code>的元素，执行<code>translate(0%)</code>并不表示停在向左移动后的位置不动，而是向右平移，回到其向左移动前在窗口中的原始位置。</p>
+<p>因为<code>transform</code>的效果十分唐突，因此一般都配合<code>transition</code>的过渡效果配合使用。使用</p>
+<p><code>transition:transform 0.4s ease 0.4s</code></p>
+<p>可以添加时长为0.4秒，时间曲线为<code>ease</code>(规定慢速开始，然后变快，然后慢速结束的过渡效果)的过渡效果。</p>
+<p>那么如何识别将要被切换的页面？可以使用一个脑洞大开的方法：利用相邻兄弟选择器，因为在html中单选框和div是相间排列的，即一个input type=”radio”后总是跟着一个div，因此用下面的写法可以确定与当前选中的单选框相邻的div块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input:checked + div&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为4个div块之间存在覆盖的关系（如第4个div块会覆盖第3个，第2个会覆盖第1个），因此每次切换时，需要将前一个div块换下，换上新的div块。这里“换”的具体方法，就是使用<code>translateX(0%)</code>将与当前radio相邻的div块放置到窗口中的原位置，再用<code>translateX(-100%)</code>将前一个div块放到窗口左侧看不见的区域备用。结合<code>transition</code>,代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">input:checked + div&#123;</span><br><span class="line">    transform: translateX(0%);</span><br><span class="line">    transition:transform 0.4s ease 0.4s;</span><br><span class="line"></span><br><span class="line">    &lt;!--for chrome and safari --&gt;</span><br><span class="line">    -webkit-transform: translateX(0%);</span><br><span class="line">    -webkit-transition: -webkit-transform 0.4s ease 0.4s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    transform: translateX(-100%);</span><br><span class="line">    transition: transform 0.4s ease 0.4s;</span><br><span class="line"></span><br><span class="line">    &lt;!--for chrome and safari --&gt;</span><br><span class="line">    -webkit-transform: translateX(-100%);</span><br><span class="line">    -webkit-transition: -webkit-transform 0.4s ease;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然而运行网页时，却遇到了意想不到的问题：页面的切换是一次性的，即换成别的之后就换不回去了orz</p>
+<p>这个时候之前调试边框填充时瞎搞的方法居然派上了用场，将<code>offline-offset</code>设置成-5，运行时发现单选框竟然点了之后就恢复不回去了，即使其他的单选框已经被选中：</p>
+<p><br><br><img src="/images/CSStab/5.png" alt="img5"><br><br></p>
+<p>找到问题了，STFW发现，将所有单选框的name属性设置为相同的值就可以将它们归为一组。想想也对，我放那么多单选框，它怎么知道自己跟哪些单选框是一组呢</p>
+<p>修改HTML代码如下,效果终于正常了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;CSS colorful tab&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot; checked=&quot;checked&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>总结一下，利用HTML和CSS搭建静态网页的大体流程就是先盖房，再装修，但是HTML和CSS之间的联系还是要深入理解的，比如一开始发现网页中左侧Tab的选择框其实是被包装过的的单选小圆钮，这个操作还是让我这种初学者大开了一把眼界。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/01/18/托福模板/" title="托福模板">托福模板</a></h2>
+                <p class="excerpt">
+                
+                综合写作
+The lecture is in conflict with the reading passage about __. The lecturer believes that __.
+
+First, the reading passage suggests that ___. Howev
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-01-17T16:17:29.899Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/英语/">英语</a>
+</span><a class="btn-border-small" href="/2019/01/18/托福模板/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 leafeonia - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f3be04432e71aba12046174e82dfba5b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-70},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
