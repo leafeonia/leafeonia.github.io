@@ -1,16 +1,16 @@
 input{
     position: absolute;
-    left: 0;
-    width: 20px;
+    right: 0;
+    width: 30px;
     height: 25%;
-    outline: 15px solid ;
-    outline-offset: -10px;
+    outline: 20px solid ;
+    outline-offset: -20px;
     margin: 0;
     z-index: 1;
     cursor: pointer;
 }
 input:nth-of-type(1){
-    outline-color: darkorchid;
+    outline-color: lavender;
     top: 0%;
 }
 input:nth-of-type(2){
@@ -35,7 +35,7 @@ input:checked + div{
     -webkit-transition: -webkit-transform 0.4s ease 0.4s;
 }
 
-div{
+div.tab{
     position: absolute;
     top: 0;
     left: 0;
@@ -46,28 +46,28 @@ div{
     vertical-align:middle;
     font-size: 100px;
     font-family: monospace;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.4s ease 0.4s;
 
     <!--for chrome and safari -->
-    -webkit-transform: translateX(-100%);
+    -webkit-transform: translateX(100%);
     -webkit-transition: -webkit-transform 0.4s ease;
 }
 
 
 
-div:nth-of-type(1){
-    background-color: darkorchid;
+div.tab:nth-of-type(1){
+    background-color: lavender;
 }
 
-div:nth-of-type(2){
+div.tab:nth-of-type(2){
     background-color: aquamarine;
 }
 
-div:nth-of-type(3){
+div.tab:nth-of-type(3){
     background-color: coral;
 }
 
-div:nth-of-type(4){
+div.tab:nth-of-type(4){
     background-color: wheat;
 }
