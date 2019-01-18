@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>HTML+CSS实现彩色文件夹页面切换效果 | Leafeon&#39;s Place</title>
+    <title>HTML+CSS实现彩色文件夹切换效果网页 | Leafeon&#39;s Place</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="正在施工中~">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="HTML+CSS实现彩色文件夹页面切换效果 | Leafeon&#39;s Place">
+    <meta name="twitter:title" content="HTML+CSS实现彩色文件夹切换效果网页 | Leafeon&#39;s Place">
     <meta name="twitter:description" content="正在施工中~">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="HTML+CSS实现彩色文件夹页面切换效果 | Leafeon&#39;s Place">
+    <meta property="og:title" content="HTML+CSS实现彩色文件夹切换效果网页 | Leafeon&#39;s Place">
     <meta property="og:description" content="正在施工中~">
 
     
@@ -35,7 +35,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="http://leafeonia.github.io/2019/01/18/CSStab/"/>
+    <link rel="canonical" href="http://leafeonia.github.io/2019/01/18/HTML-CSS生成彩色文件夹效果网页/"/>
 
                  
 </head>
@@ -126,7 +126,7 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2019-01-18T09:51:24.238Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-meta__tags tags">于 
+      <time datetime="2019-01-18T13:07:06.000Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-meta__tags tags">于 
   <a class="tag-link" href="/tags/前端/">前端</a>
  </span>
       <span class="page-pv">
@@ -134,7 +134,7 @@
       </span> 
    
     </div>
-    <h1 class="post-title">HTML+CSS实现彩色文件夹页面切换效果</h1>
+    <h1 class="post-title">HTML+CSS实现彩色文件夹切换效果网页</h1>
   </header>
 
   <section class="post">
@@ -145,13 +145,13 @@
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>这两天稍微理解了一些前端语言之间的关系，如果把制作网页看成是搭一间房子，那么HTML作为描述网页结构的工具，就是钢筋混凝土骨架，而CSS样式表则是进行精细的内部装修。因此，首先要完成HTML的构建。这个例子中，网页实际可操作的内容并不多，实际上主要元素只是左侧的4个选择区和右侧的显示块主体。选择区可以用radio单选框实现，而右侧的主体部分实际上可以视为互相覆盖的4个块，即4个不同的div。因此，HTML的内容并不复杂（然而即使这么简单后来还是发现了bug，接下来会解释）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;CSS colorful tab&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; checked=&quot;checked&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>代码很简单，效果也很苍白orz</p>
-<p><br><br><img src="/2019/01/18/CSStab/images/CSStab/1.png" alt="img1"><br><br></p>
+<p><br><br><img src="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/1.png" alt="img1"><br><br></p>
 <h2 id="CSS-基本结构"><a href="#CSS-基本结构" class="headerlink" title="CSS:基本结构"></a>CSS:基本结构</h2><p>所以接下来CSS的内容才是关键。首先既然要将div作为占满屏幕的块，那么就要将其样式设置为占满全屏。通过nth-of-type选择器为4个div块分别设置不同底色，由于目前并没有切换效果，所以第4个div块会覆盖其他元素并占满全屏。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">&#125;</span><br><span class="line">div:nth-of-type(1)&#123;</span><br><span class="line">    background-color: darkorchid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-of-type(2)&#123;</span><br><span class="line">    background-color: aquamarine;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-of-type(3)&#123;</span><br><span class="line">    background-color: coral;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div:nth-of-type(4)&#123;</span><br><span class="line">    background-color: wheat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br><br><img src="/2019/01/18/CSStab/images/CSStab/2.png" alt="img2"><br><br></p>
+<p><br><br><img src="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/2.png" alt="img2"><br><br></p>
 <p>此时div块将4个单选框也一并覆盖了。因此接下来需要设置单选框的样式。设置如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">input&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 20px;</span><br><span class="line">    height: 25%;</span><br><span class="line">    outline: 10px solid ;</span><br><span class="line">    outline-offset: -10px;</span><br><span class="line">    margin: 0;</span><br><span class="line">    z-index: 1;</span><br><span class="line">    cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(1)&#123;</span><br><span class="line">    outline-color: darkorchid;</span><br><span class="line">    top: 0%;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(2)&#123;</span><br><span class="line">    outline-color: aquamarine;</span><br><span class="line">    top: 25%;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(3)&#123;</span><br><span class="line">    outline-color: coral;</span><br><span class="line">    top: 50%;</span><br><span class="line">&#125;</span><br><span class="line">input:nth-of-type(4)&#123;</span><br><span class="line">    outline-color: wheat;</span><br><span class="line">    top: 75%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br><br><img src="/2019/01/18/CSStab/images/CSStab/3.png" alt="img3"><br><br></p>
+<p><br><br><img src="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/3.png" alt="img3"><br><br></p>
 <p>这里有几个比较关键的属性。</p>
 <p><br></p>
 <ul>
@@ -159,7 +159,7 @@
 </ul>
 <p><code>outline</code>属性指定了边框的样式，而<code>outline-offset</code>属性设置边框的偏移量。当outline-offset为-10时，相当于边框在原边框基础上向内收缩了10px，而<code>outline</code>又被设置为宽度为10px的solid填充，因此这两个属性实际上起到了纯色填充的效果。至于具体填充什么颜色，交由<code>nth-of-type</code>选择器进行设置。</p>
 <p>为了更好地理解这两个属性的作用，尝试把<code>outline-offset</code>设置为-5，效果如下：</p>
-<p><br><br><img src="/2019/01/18/CSStab/images/CSStab/4.png" alt="img4"><br><br></p>
+<p><br><br><img src="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/4.png" alt="img4"><br><br></p>
 <p>可以很明显地看出，相对于20px的宽度，-5px的缩进只能填充一半的内容。</p>
 <p><br></p>
 <ul>
@@ -181,7 +181,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">input:checked + div&#123;</span><br><span class="line">    transform: translateX(0%);</span><br><span class="line">    transition:transform 0.4s ease 0.4s;</span><br><span class="line"></span><br><span class="line">    &lt;!--for chrome and safari --&gt;</span><br><span class="line">    -webkit-transform: translateX(0%);</span><br><span class="line">    -webkit-transition: -webkit-transform 0.4s ease 0.4s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    transform: translateX(-100%);</span><br><span class="line">    transition: transform 0.4s ease 0.4s;</span><br><span class="line"></span><br><span class="line">    &lt;!--for chrome and safari --&gt;</span><br><span class="line">    -webkit-transform: translateX(-100%);</span><br><span class="line">    -webkit-transition: -webkit-transform 0.4s ease;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然而运行网页时，却遇到了意想不到的问题：页面的切换是一次性的，即换成别的之后就换不回去了orz</p>
 <p>这个时候之前调试边框填充时瞎搞的方法居然派上了用场，将<code>offline-offset</code>设置成-5，运行时发现单选框竟然点了之后就恢复不回去了，即使其他的单选框已经被选中：</p>
-<p><br><br><img src="/2019/01/18/CSStab/images/CSStab/5.png" alt="img5"><br><br></p>
+<p><br><br><img src="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/5.png" alt="img5"><br><br></p>
 <p>找到问题了，STFW发现，将所有单选框的name属性设置为相同的值就可以将它们归为一组。想想也对，我放那么多单选框，它怎么知道自己跟哪些单选框是一组呢</p>
 <p>修改HTML代码如下,效果终于正常了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;CSS colorful tab&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot; checked=&quot;checked&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;name&quot;/&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 <p>总结一下，利用HTML和CSS搭建静态网页的大体流程就是先盖房，再装修，但是HTML和CSS之间的联系还是要深入理解的，比如一开始发现网页中左侧Tab的选择框其实是被包装过的的单选小圆钮，这个操作还是让我这种初学者大开了一把眼界。</p>
@@ -193,10 +193,12 @@
 <section class="read-more">
            
     
+        
+        
                
             <div class="read-more-item">
-                <span class="read-more-item-dim">Newer Post</span>
-                <h2 class="post-list__post-title post-title"><a href="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/" title="HTML+CSS实现彩色文件夹切换效果网页">HTML+CSS实现彩色文件夹切换效果网页</a></h2>
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/01/18/CSStab/" title="HTML+CSS实现彩色文件夹页面切换效果">HTML+CSS实现彩色文件夹页面切换效果</a></h2>
                 <p class="excerpt">
                 
                 初学HTML和CSS，了解了一些基本概念之后觉得还是通过搞事学习比较有意思
@@ -205,28 +207,9 @@
 以下是简要的
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2019-01-18T13:07:06.000Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-list__meta--tags tags">于 
+                <div class="post-list__meta"><time datetime="2019-01-18T09:51:24.238Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-list__meta--tags tags">于 
   <a class="tag-link" href="/tags/前端/">前端</a>
-</span><a class="btn-border-small" href="/2019/01/18/HTML-CSS生成彩色文件夹效果网页/">继续阅读</a></div>
-                           
-            </div>
-        
-        
-               
-            <div class="read-more-item">
-                <span class="read-more-item-dim">Older Post</span>
-                <h2 class="post-list__post-title post-title"><a href="/2019/01/18/托福模板/" title="托福模板">托福模板</a></h2>
-                <p class="excerpt">
-                
-                综合写作
-The lecture is in conflict with the reading passage about __. The lecturer believes that __.
-
-First, the reading passage suggests that ___. Howev
-                &hellip;
-                </p>
-                <div class="post-list__meta"><time datetime="2019-01-17T16:17:29.899Z" class="post-list__meta--date date">2019-01-18</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/英语/">英语</a>
-</span><a class="btn-border-small" href="/2019/01/18/托福模板/">继续阅读</a></div>
+</span><a class="btn-border-small" href="/2019/01/18/CSStab/">继续阅读</a></div>
                        
             </div>
         
