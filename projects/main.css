@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("bg.jpg");
+    filter:Alpha(Opacity=80);opacity:0.8;
+    font-family: arial,Verdana,Tahoma,monospace;
+}
+
+.accordian{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 100px;
+    width: 1025px;
+    overflow: hidden;
+}
+
+.accordian ul:hover li{
+    width: 80px;
+}
+
+.accordian ul li:hover{
+    width: 760px;
+}
+
+.accordian ul{
+    width: 2000px;
+}
+
+.accordian li{
+    position: relative;
+    float: left;
+    width: 250px;
+    border-left: 1px solid #888;
+
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    list-style-type: none;
+}
+
+img.accordian_img{
+    min-width: 760px;
+    min-height: 400px;
+    max-height: 400px;
+    max-width: 760px;
+}
+div.image_title{
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 760px;
+}
+
+div.image_title a{
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+div.intro{
+    position: absolute;
+    right: 150px;
+    bottom: 50px;
+    width: 800px;
+    height: 100px;
+    padding: 15px;
+    color: white;
+    text-align: right;
+    background: -webkit-linear-gradient(right,black,transparent);
+}
+
+.footer{
+    display: none;
+}
