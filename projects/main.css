@@ -5,7 +5,7 @@
 body{
     background: url("bg.jpg");
     filter:Alpha(Opacity=80);opacity:0.8;
-    font-family: arial,Verdana,Tahoma,monospace;
+    font-family: “Arial”,”Microsoft YaHei”,”黑体”,”宋体”,sans-serif;
 }
 
 .accordian{
@@ -13,7 +13,7 @@ body{
     top: 0;
     right: 0;
     margin: 100px;
-    width: 1025px;
+    width: 905px;
     overflow: hidden;
 }
 
@@ -22,7 +22,7 @@ body{
 }
 
 .accordian ul li:hover{
-    width: 760px;
+    width: 640px;
 }
 
 .accordian ul{
@@ -32,7 +32,7 @@ body{
 .accordian li{
     position: relative;
     float: left;
-    width: 250px;
+    width: 220px;
     border-left: 1px solid #888;
 
     box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
@@ -44,10 +44,10 @@ body{
 }
 
 img.accordian_img{
-    min-width: 760px;
+    min-width: 640px;
     min-height: 400px;
     max-height: 400px;
-    max-width: 760px;
+    max-width: 640px;
 }
 div.image_title{
     background: rgba(0,0,0,0.5);
@@ -55,7 +55,7 @@ div.image_title{
     left: 0;
     bottom: 0;
     display: block;
-    width: 760px;
+    width: 640px;
 }
 
 div.image_title a{
@@ -66,7 +66,7 @@ div.image_title a{
     display: block;
 }
 
-div.intro{
+#intro{
     position: absolute;
     right: 150px;
     bottom: 50px;
@@ -75,6 +75,7 @@ div.intro{
     padding: 15px;
     color: white;
     text-align: right;
+    line-height: 200%;
     background: -webkit-linear-gradient(right,black,transparent);
 }
 
