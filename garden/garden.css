@@ -1,0 +1,33 @@
+body{
+    background-color: white;
+}
+
+part {
+    margin: 0 1% 3%;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.2);
+    background-color: #fefefe;
+    max-width: 42%;
+    padding: 2.5% 2.5% 10px;
+    display: inline-block;
+}
+
+part a img{
+    display: block;  /*img作为block独占一行，避免出现caption于img同一行的情况*/
+    max-width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    -webkit-transition: all 0.5s;
+}
+
+part a img:hover{
+    -webkit-filter: contrast(150%);
+}
+
+part figcaption{
+    font-size: .7rem;
+    color: #999;
+    line-height: 2.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
