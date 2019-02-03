@@ -1,5 +1,7 @@
 body{
-    background-color: white;
+    background: url("bg.jpg") right;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
 }
 
 part {
