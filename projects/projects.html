@@ -150,10 +150,10 @@
                 text = "C++ + Qt + opencv\n模拟绘图方块小游戏";
                 break;
             case 3:
-                text = "text3";
+                text = "将字符画在线转换为mif文件\n为凉心的数电实验送一点温暖\n（正在施工中）";
                 break;
             case 4:
-                text = "text4";
+                text = "不要停下来啊（指搞事）";
                 break;
         }
         document.getElementById("intro").innerText = text;
@@ -162,15 +162,15 @@
 <div class="accordian">
     <ul>
         <li>
-            <div class="image_title">
+            <div class="image_title" onmouseover="changeText(1)">
                 <a href="https://github.com/leafeonia/Guichu2DEngine" target="_blank" rel="noopener">鬼畜弹球引擎</a>
             </div>
-            <a href="#" onmouseover="changeText(1)">
+            <a href="https://github.com/leafeonia/Guichu2DEngine" onmouseover="changeText(1)" target="_blank" rel="noopener">
                 <img class="accordian_img" src="/projects/philosopher.png" alt="img1">
             </a>
         </li>
         <li>
-            <div class="image_title">
+            <div class="image_title" onmouseover="changeText(2)">
                 <a href="https://github.com/leafeonia/picrossGame" target="_blank" rel="noopener">绘图方块游戏</a>
             </div>
             <a href="https://github.com/leafeonia/picrossGame" onmouseover="changeText(2)" target="_blank" rel="noopener">
@@ -178,16 +178,16 @@
             </a>
         </li>
         <li>
-            <div class="image_title">
-                <a href="#">字符画在线转mif文件</a>
+            <div class="image_title" onmouseover="changeText(3)">
+                <a href="https://leafeonia.github.io/-mif/mif_generation.html">字符画在线转mif文件</a>
             </div>
-            <a href="#" onmouseover="changeText(3)">
+            <a href="https://leafeonia.github.io/-mif/mif_generation.html" onmouseover="changeText(3)">
                 <img class="accordian_img" src="/projects/3.png" alt="img3">
             </a>
         </li>
         <li>
-            <div class="image_title">
-                <a href="#">link4</a>
+            <div class="image_title" onmouseover="changeText(4)">
+                <a href="#">to be continued...</a>
             </div>
             <a href="#" onmouseover="changeText(4)">
                 <img class="accordian_img" src="/projects/4.jpg" alt="img4">

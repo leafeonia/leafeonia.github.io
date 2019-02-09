@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>HTML+CSS实现网页效果2：手风琴切换slider | Leafeon&#39;s Place</title>
+    <title>HTML+CSS实现网页效果2：手风琴切换效果slider | Leafeon&#39;s Place</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="正在施工中~">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="HTML+CSS实现网页效果2：手风琴切换slider | Leafeon&#39;s Place">
+    <meta name="twitter:title" content="HTML+CSS实现网页效果2：手风琴切换效果slider | Leafeon&#39;s Place">
     <meta name="twitter:description" content="正在施工中~">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="HTML+CSS实现网页效果2：手风琴切换slider | Leafeon&#39;s Place">
+    <meta property="og:title" content="HTML+CSS实现网页效果2：手风琴切换效果slider | Leafeon&#39;s Place">
     <meta property="og:description" content="正在施工中~">
 
     
@@ -35,7 +35,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="http://leafeonia.github.io/2019/01/23/HTML-CSS实现网页效果2：手风琴切换slider/"/>
+    <link rel="canonical" href="http://leafeonia.github.io/2019/01/23/HTML-CSS实现网页效果2：手风琴切换效果slider/"/>
 
                  
 </head>
@@ -136,7 +136,7 @@
       </span> 
    
     </div>
-    <h1 class="post-title">HTML+CSS实现网页效果2：手风琴切换slider</h1>
+    <h1 class="post-title">HTML+CSS实现网页效果2：手风琴切换效果slider</h1>
   </header>
 
   <section class="post">
@@ -145,7 +145,7 @@
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML的结构十分清晰，即一个主div块（类名为<code>accordian</code>），其包含一个有着四个表项的无序表。每个表项中包含一个文字链接和一个图片链接。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Accordian Style Slider&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;accordian&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">            &lt;div class=&quot;image_title&quot;&gt;</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;link1&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;</span><br><span class="line">                &lt;img class=&quot;accordian_img&quot; src=&quot;1.png&quot; alt=&quot;img1&quot;&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">            &lt;div class=&quot;image_title&quot;&gt;</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;link2&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;</span><br><span class="line">                &lt;img class=&quot;accordian_img&quot; src=&quot;2.png&quot; alt=&quot;img2&quot;&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">            &lt;div class=&quot;image_title&quot;&gt;</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;link3&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;</span><br><span class="line">                &lt;img class=&quot;accordian_img&quot; src=&quot;3.jpg&quot; alt=&quot;img3&quot;&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">            &lt;div class=&quot;image_title&quot;&gt;</span><br><span class="line">                &lt;a href=&quot;#&quot;&gt;link4&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;a href=&quot;#&quot;&gt;</span><br><span class="line">                &lt;img class=&quot;accordian_img&quot; src=&quot;4.jpg&quot; alt=&quot;img4&quot;&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>初始效果：</p>
-<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换slider/1.png" alt="img1"></p>
+<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换效果slider/1.png" alt="img1"></p>
 <h2 id="美化image-title"><a href="#美化image-title" class="headerlink" title="美化image_title"></a>美化image_title</h2><p>将link1等文字放置于图片下方，并增加阴影效果。</p>
 <p>阴影效果的设置比较简单，通过<code>background: rgba(0,0,0,0.5)</code>即可</p>
 <p>放置在图片下方则涉及对CSS中的定位。CSS中有三种定位方式：</p>
@@ -158,18 +158,18 @@
 <p>即可为<code>li</code>开启定位，且不产生其他副作用</p>
 <p>CSS：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">li&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">img.accordian_img&#123;</span><br><span class="line">    width: 640px;</span><br><span class="line">    height: 400px;</span><br><span class="line">&#125;</span><br><span class="line">div.image_title&#123;</span><br><span class="line">    background: rgba(0,0,0,0.5);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 640px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div.image_title a&#123;</span><br><span class="line">    padding: 20px;</span><br><span class="line">    color: white;</span><br><span class="line">    font-size: 16px;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">    display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换slider/2.png" alt="img2"></p>
+<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换效果slider/2.png" alt="img2"></p>
 <h2 id="水平放置"><a href="#水平放置" class="headerlink" title="水平放置"></a>水平放置</h2><p>将最大的div块(class=”accordian”)宽度设置为640px,无序表中每个表项的宽度设置为160px，并开启浮动：<code>float:left</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div.accordian&#123;</span><br><span class="line">    width: 640px;</span><br><span class="line">&#125;</span><br><span class="line">li&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 160px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>效果如下：</p>
-<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换slider/3.png" alt="img3"></p>
+<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换效果slider/3.png" alt="img3"></p>
 <p>这里有两个问题，第一个是<code>li</code>标签自带的小圆点没有消除，在CSS中为<code>li</code>添加<code>list-style-type: none</code>即可消除。</p>
 <p>第二个是最后一幅图片会超出640px的宽度限制。这是由于未定义溢出处理方式导致的。同样为CSS添加属性<code>overflow: hidden;</code>可解决此问题。</p>
-<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换slider/4.png" alt="img4"></p>
+<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换效果slider/4.png" alt="img4"></p>
 <h2 id="添加切换效果"><a href="#添加切换效果" class="headerlink" title="添加切换效果"></a>添加切换效果</h2><p>实现切换效果的核心思想在于，<strong>子元素的样式会覆盖父元素的样式</strong></p>
 <p>所以在鼠标放置在最大的父元素<code>.accordian</code>上时，利用<code>hover</code>伪类，为子元素<code>li</code>设置样式<code>width: 40px</code>，此时所有的<code>li</code>的宽度缩小为40px，但是鼠标放置的<code>li</code>除外，因为对于鼠标放置的<code>li</code>，其也设置了样式<code>width:520px</code>，这一样式的优先级高于从<code>accordian</code>继承的优先级，因此其宽度为520px，而非其他<code>li</code>的40px。</p>
 <p>再添加渐变效果：<code>transition: all 0.5s</code></p>
 <p>以及边框阴影: <code>box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5)</code>,就实现了切换动画。</p>
-<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换slider/5.png" alt="img5"></p>
+<p><img src="/2019/01/23/HTML-CSS实现网页效果2：手风琴切换效果slider/5.png" alt="img5"></p>
 
   </section>
 

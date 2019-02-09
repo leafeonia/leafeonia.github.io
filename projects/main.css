@@ -9,30 +9,27 @@ body{
 }
 
 .accordian{
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 100px;
-    width: 905px;
+
+    width: 96%;
     overflow: hidden;
 }
 
 .accordian ul:hover li{
-    width: 80px;
+    width: 4%;
 }
 
 .accordian ul li:hover{
-    width: 640px;
+    width: 36%;
 }
 
 .accordian ul{
-    width: 2000px;
+    width: 200%;
 }
 
 .accordian li{
     position: relative;
     float: left;
-    width: 220px;
+    width: 11%;
     border-left: 1px solid #888;
 
     box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
@@ -67,10 +64,8 @@ div.image_title a{
 }
 
 #intro{
-    position: absolute;
-    right: 150px;
-    bottom: 50px;
-    width: 800px;
+    margin-top: 70px;
+    width: 93%;
     height: 100px;
     padding: 15px;
     color: white;
