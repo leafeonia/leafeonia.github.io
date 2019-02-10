@@ -3,11 +3,17 @@
     padding: 0;
 }
 body{
-    background: url("bg.jpg");
+    background-color: black;
     filter:Alpha(Opacity=80);opacity:0.8;
     font-family: “Arial”,”Microsoft YaHei”,”黑体”,”宋体”,sans-serif;
 }
-
+canvas#c{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .accordian{
 
     width: 96%;
@@ -65,13 +71,19 @@ div.image_title a{
 
 #intro{
     margin-top: 70px;
-    width: 93%;
+    width: 90%;
     height: 100px;
     padding: 15px;
+    margin-left: 4%;
     color: white;
-    text-align: right;
+    /*text-align: right;*/
     line-height: 200%;
-    background: -webkit-linear-gradient(right,black,transparent);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgba(169,169,169,0.5);
+    /*background: -webkit-linear-gradient(right,darkgrey,transparent);*/
 }
 
 .footer{
