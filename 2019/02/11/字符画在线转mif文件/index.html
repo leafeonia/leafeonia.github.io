@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>字符画在线转mif文件 | Leafeon&#39;s Place</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="正在施工中~">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="字符画在线转mif文件 | Leafeon&#39;s Place">
+    <meta name="twitter:description" content="正在施工中~">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="字符画在线转mif文件 | Leafeon&#39;s Place">
+    <meta property="og:description" content="正在施工中~">
+
+    
+    <meta name="author" content="leafeonia">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://leafeonia.github.io/2019/02/11/字符画在线转mif文件/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Leafeon&#39;s Place 的主页"><img src="/images/avatar.jpg" width="80" alt="Leafeon&#39;s Place logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Leafeon&#39;s Place">Leafeon&#39;s Place</a></h1>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">正在施工中~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/garden/garden.html">后花园</a></li>
+            
+              <li class="navigation__item"><a href="/projects/projects.html">幻想乡</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/leafeonia" title="GitHub" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-02-11T09:51:05.000Z" class="post-list__meta--date date">2019-02-11</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/前端/">前端</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">字符画在线转mif文件</h1>
+  </header>
+
+  <section class="post">
+    <p>数电实验做打字小游戏的时候，为了美化界面，想到了把字符画存储在mif文件里，从而在屏幕上模拟出GUI界面的方法。</p>
+<p>用C++实现之后效果还不错，有些同学看到效果之后找我转换(需求量还不小orz)，所以最近想到做一个在线转换的网页来实现这一功能，正好最近在学习前端，就作为第一个javascript的实战小项目好了。</p>
+<p>地址：<br><a href="https://leafeonia.github.io/-mif/mif_generation.html">https://leafeonia.github.io/-mif/mif_generation.html</a></p>
+<h2 id="界面"><a href="#界面" class="headerlink" title="界面"></a>界面</h2><p>使用bootstrap，首先在页面顶端放置网页名称（不过这一写法在bootstrap4中不再适用，这里用的是3.3.7版本）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;nav class=&quot;navbar navbar-default&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;navbar-header&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;navbar-brand&quot;&gt;字符画在线转mif文件&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/nav&gt;</span><br></pre></td></tr></table></figure>
+<p>主界面分为左侧的<code>col-md-8</code>和右侧的<code>col-md-4</code>，左侧字符画输入框的下方又分别放置了三个<code>col-md-4</code>用来输入屏幕宽度、高度以及确认转换。这里可以看出bootstrap的栅格系统是嵌套的，即<code>col-n</code>是相对于父级元素而言的。此外，所有表单元素应该包括在一个<code>&lt;div class=&quot;form-group&quot;&gt;&lt;/div&gt;</code>中，且每个元素要包含<code>class=&quot;form-control&quot;</code>。另外提交按钮按下时会自动刷新页面，在<code>&lt;button&gt;</code>标签下添加<code>type=&quot;button&quot;</code>可以消除这一问题。</p>
+<p>背景用HTML5的canvas加了<a href="http://thecodeplayer.com/walkthrough/matrix-rain-animation-html5-canvas-javascript" target="_blank" rel="noopener">特技</a>,用如下CSS代码将canvas设置为背景：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">canvas&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    z-index: -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><p>完成界面后，需要对用户输入的信息进行转换处理</p>
+<h3 id="获取输入"><a href="#获取输入" class="headerlink" title="获取输入"></a>获取输入</h3><p>用<code>jquery</code>的选择器根据<code>id</code>选择元素，再通过<code>val</code>获得文本内容（注意不是<code>text</code>）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var text = ($(&quot;#pic&quot;).val());</span><br><span class="line">if(!text)&#123;</span><br><span class="line">    alert(&quot;请输入字符画&quot;);</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">var screen_width = ($(&quot;#width&quot;).val());</span><br><span class="line">var screen_height = ($(&quot;#height&quot;).val());</span><br></pre></td></tr></table></figure>
+<h3 id="字符画尺寸"><a href="#字符画尺寸" class="headerlink" title="字符画尺寸"></a>字符画尺寸</h3><p>用<code>split(&quot;\n&quot;)</code>方法分割输入，得到一个<code>string</code>数组，其中每一项元素都是字符画的一行。<code>string</code>数组的项数即为字符画的行数（项数用<code>length</code>获取），列数找所有行的最大宽度即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var linetext = text.split(&quot;\n&quot;);</span><br><span class="line">var height = linetext.length;</span><br><span class="line">var width = 0;</span><br><span class="line">for (var i=0;i&lt;height;i++)&#123;</span><br><span class="line">    width = Math.max(width,linetext[i].length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="主逻辑"><a href="#主逻辑" class="headerlink" title="主逻辑"></a>主逻辑</h3><p>根据mif文件的格式打印。每次通过字符串相加将新的信息添加到字符串<code>output</code>后</p>
+<p>16进制数的打印通过<code>.toString(16)</code>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var up_blank = Math.floor((screen_height-height)/2);</span><br><span class="line">var left_blank = Math.floor((screen_width-width)/2);</span><br><span class="line">var output = &quot;WIDTH=8;\nDEPTH=&quot; +  screen_width*screen_height +&quot;;\n\nADDRESS_RADIX=HEX;\nDATA_RADIX=HEX;\n\nCONTENT BEGIN\n&quot;;</span><br><span class="line">for (i=0;i &lt; up_blank*screen_width;i++)&#123;</span><br><span class="line">    output += i.toString(16)+&quot;: 00;\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line">for (i=0;i&lt;height;i++)&#123;</span><br><span class="line">    for (var j = 0;j &lt; left_blank;j++)&#123;</span><br><span class="line">        output += (screen_width*(i+up_blank)+j).toString(16)+&quot;: 00;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    for (j = left_blank;j &lt; left_blank+linetext[i].length;j++)&#123;</span><br><span class="line">        output += (screen_width*(i+up_blank)+j).toString(16) + &quot;: &quot; + linetext[i][j-left_blank].charCodeAt().toString(16) + &quot;;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    for (j = left_blank+linetext[i].length;j &lt; screen_width;j++)&#123;</span><br><span class="line">        output += (screen_width*(i+up_blank)+j).toString(16)+&quot;: 00;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">for(i = screen_width*(up_blank+height);i &lt; screen_width*screen_height;i++)&#123;</span><br><span class="line">    output += i.toString(16)+&quot;: 00;\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line">output += &quot;END\n&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="创建并下载文件"><a href="#创建并下载文件" class="headerlink" title="创建并下载文件"></a>创建并下载文件</h3><p>该函数以<code>filename</code>为文件名，<code>text</code>为文件内容，创建一个<code>a</code>元素，设置链接，并模拟点击，达到下载的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function download(filename, text) &#123;</span><br><span class="line">    var element = document.createElement(&apos;a&apos;);</span><br><span class="line">    element.setAttribute(&apos;href&apos;, &apos;data:text/plain;charset=utf-8,&apos; + encodeURIComponent(text));</span><br><span class="line">    element.setAttribute(&apos;download&apos;, filename);</span><br><span class="line">    element.style.display = &apos;none&apos;;</span><br><span class="line">    document.body.appendChild(element);</span><br><span class="line">    element.click();</span><br><span class="line">    document.body.removeChild(element);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/02/09/加载github上的html页面/" title="加载github上的html页面">加载github上的html页面</a></h2>
+                <p class="excerpt">
+                
+                将html上传到github上之后，默认显示的是源代码：
+
+
+
+如果希望直接显示网页效果应该怎么做？在网上查到的第一种方法是在github上html的地址前加上https://htmlpreview.github.io/?，但是这样加载出来的网页只有单独的html，而没有css和js的效果，并不能让
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-02-09T13:57:11.000Z" class="post-list__meta--date date">2019-02-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/前端/">前端</a>
+</span><a class="btn-border-small" href="/2019/02/09/加载github上的html页面/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 leafeonia - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+    
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f3be04432e71aba12046174e82dfba5b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-70},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
