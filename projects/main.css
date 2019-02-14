@@ -25,7 +25,7 @@ canvas#c{
 }
 
 .accordian ul li:hover{
-    width: 36%;
+    width: 32%;
 }
 
 .accordian ul{
@@ -35,7 +35,7 @@ canvas#c{
 .accordian li{
     position: relative;
     float: left;
-    width: 11%;
+    width: 9.8%;   /*200% * 11% = 22%*/
     border-left: 1px solid #888;
 
     box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
@@ -83,6 +83,7 @@ div.image_title a{
     border-radius: 8px;
     text-align: center;
     background-color: rgba(169,169,169,0.5);
+    box-shadow: rgba(255,255,255,0.3) 0 0 10px;
     /*background: -webkit-linear-gradient(right,darkgrey,transparent);*/
 }
 
