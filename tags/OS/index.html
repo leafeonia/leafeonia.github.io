@@ -35,7 +35,7 @@
     <meta name="generator" content="hexo"/>
     
 
-    <link rel="canonical" href="http://leafeonia.github.io/projects/projects.html"/>
+    <link rel="canonical" href="http://leafeonia.github.io"/>
 
                  
 </head>
@@ -122,102 +122,52 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <article class="post-container post-container--single">
+            <div class="main-post-list">
+    
+  <ol class="post-list">
+  
+    
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="/2019/02/26/OS-Minilab-01-pstree/" title="link to post.title">OS Minilab 01 - pstree</a></h2>
+      <p class="excerpt">
+    
+      Minilab1学习到的中一些有用的技巧。
+解析命令行选项使用getopt_long函数（头文件&amp;lt;getopt.h&amp;gt;）
+参数1、2：argc,argv
+参数3：识别的短选项，如需识别-p -V -n(均不带参数)，则该项为&amp;quot;pVn&amp;quot;
+参数4：识别长选项，定义一个如下结构
+1234567static struct option long_options[] = &amp;#1
+    &hellip;
+      </p>
+      <div class="post-list__meta"><time datetime="2019-02-26T13:52:00.000Z" class="post-list__meta--date date">2019-02-26</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/OS/">OS</a>
+</span><a class="btn-border-small" href="/2019/02/26/OS-Minilab-01-pstree/">继续阅读</a></div>
+      <hr class="post-list__divider">
+    </li>
+  
+    
+  </ol>
 
-  <header class="post-header">
-    <h1 class="post-title"></h1>
-  </header>
 
-  <section class="post">
-    <!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projects</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <script>
-        function changeText(n) {
-            var text;
-            switch (n) {
-                case 1:
-                    text = "基于C++和Qt\n对Tianyun Zhang的项目LabLuminac-Qt-2DWorld-Engine 的简单鬼畜修改\n一个可以自♂由碰撞的平台";
-                    break;
-                case 2:
-                    text = "C++ + Qt + opencv\n模拟绘图方块小游戏";
-                    break;
-                case 3:
-                    text = "将字符画在线转换为mif文件\n为凉心的数电实验送一点温暖\n";
-                    break;
-                case 4:
-                    text = "不添加任何杂质\n纯粹的搜索界面";
-                    break;
-                case 5:
-                    text = "不要停下来啊（指搞事）";
-                    break;
-            }
-            document.getElementById("intro").innerText = text;
+ <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+    
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
         }
-    </script>
-    <canvas id="c"></canvas>
-    <script src="bg.js"></script>
-    <div class="accordian">
-        <ul>
-            <li>
-                <div class="image_title" onmouseover="changeText(1)">
-                    <a href="https://github.com/leafeonia/Guichu2DEngine" target="_blank" rel="noopener">鬼畜弹球引擎</a>
-                </div>
-                <a href="https://github.com/leafeonia/Guichu2DEngine" onmouseover="changeText(1)" target="_blank" rel="noopener">
-                    <img class="accordian_img" src="https://i.loli.net/2019/02/10/5c5fa0aa0e4a6.png" alt="philosopher.png" title="philosopher.png">
-                </a>
-            </li>
-            <li>
-                <div class="image_title" onmouseover="changeText(2)">
-                    <a href="https://github.com/leafeonia/picrossGame" target="_blank" rel="noopener">绘图方块游戏</a>
-                </div>
-                <a href="https://github.com/leafeonia/picrossGame" onmouseover="changeText(2)" target="_blank" rel="noopener">
-                    <img class="accordian_img" src="https://i.loli.net/2019/02/10/5c5fa0a98dced.png" alt="picross.png" title="picross.png">
-                </a>
-            </li>
-            <li>
-                <div class="image_title" onmouseover="changeText(3)">
-                    <a href="https://leafeonia.github.io/-mif/mif_generation.html">字符画在线转mif文件</a>
-                </div>
-                <a href="https://leafeonia.github.io/-mif/mif_generation.html" onmouseover="changeText(3)">
-                    <img class="accordian_img" src="https://i.loli.net/2019/02/10/5c5fa0a9b6261.png" alt="3.png" title="3.png">
-                </a>
-            </li>
-            <li>
-                <div class="image_title" onmouseover="changeText(4)">
-                    <a href="https://leafeonia.github.io/my_homepage/index.html">简约浏览器主页</a>
-                </div>
-                <a href="https://leafeonia.github.io/my_homepage/index.html" onmouseover="changeText(4)">
-                    <img class="accordian_img" src="https://i.loli.net/2019/02/14/5c6589fbe1411.png" alt="img4">
-                </a>
-            </li>
-            <li>
-                <div class="image_title" onmouseover="changeText(5)">
-                    <a href="#">to be continued...</a>
-                </div>
-                <a href="#" onmouseover="changeText(5)">
-                    <img class="accordian_img" src="https://i.loli.net/2019/02/10/5c5fa0a8e08e7.jpg" alt="img5">
-                </a>
-            </li>
-
-        </ul>
-    </div>
-    <div id="intro">
-
-    </div>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-70},"mobile":{"show":true,"scale":0.3},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-70},"mobile":{"show":true,"scale":0.3},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
-</html>
-  </section>
-</article>
-
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</div>
 
 
             <footer class="footer">
