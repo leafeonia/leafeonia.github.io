@@ -153,6 +153,9 @@
 <p>通过<code>&lt;stdio.h&gt;</code>中的系列文件读取函数读取文件，可以通过<code>fgets()</code>读取一行。</p>
 <h2 id="树形打印"><a href="#树形打印" class="headerlink" title="树形打印"></a>树形打印</h2><p>采用递归。<code>depth</code>为当前递归深度。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(i = 0;i &lt; depth-1;i++) printf(&quot;|    &quot;);</span><br><span class="line">printf(&quot;|---%s\n&quot;,content);</span><br></pre></td></tr></table></figure>
+<h2 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h2><p>在Makefile中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ARG = </span><br><span class="line">test: </span><br><span class="line">	gcc -m64 $(CFLAGS) $(SRCS) -o $@ $(LDFLAGS) &amp;&amp; ./test $(ARG)</span><br><span class="line">	gcc -m32 $(CFLAGS) $(SRCS) -o $@ $(LDFLAGS) &amp;&amp; ./test $(ARG)</span><br></pre></td></tr></table></figure></p>
+<p>执行<code>make test ARG=&quot;-n -p&quot;</code>,会先编译64位版本的<code>test</code>可执行文件并以<code>-n -p</code>作为命令行参数执行，再以32位版本做一遍同样的操作。</p>
+<p>因为<code>make test</code>不会生成git log,所以jyy建议执行<code>make &amp;&amp; make test</code></p>
 
   </section>
 
