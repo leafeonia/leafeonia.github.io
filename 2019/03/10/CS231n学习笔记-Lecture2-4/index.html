@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>CS231n学习笔记:Lecture2~4 | Leafeon&#39;s Place</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="因为那边有天空">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CS231n学习笔记:Lecture2~4 | Leafeon&#39;s Place">
+    <meta name="twitter:description" content="因为那边有天空">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CS231n学习笔记:Lecture2~4 | Leafeon&#39;s Place">
+    <meta property="og:description" content="因为那边有天空">
+
+    
+    <meta name="author" content="leafeonia">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar.jpg">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://leafeonia.github.io/2019/03/10/CS231n学习笔记-Lecture2-4/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(https://i.loli.net/2019/02/12/5c61a0fe7943a.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Leafeon&#39;s Place 的主页"><img src="/images/avatar.jpg" width="80" alt="Leafeon&#39;s Place logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Leafeon&#39;s Place">Leafeon&#39;s Place</a></h1>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">因为那边有天空</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/garden/garden.html">后花园</a></li>
+            
+              <li class="navigation__item"><a href="/projects/projects.html">幻想乡</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/leafeonia" title="GitHub" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-03-10T08:52:34.000Z" class="post-list__meta--date date">2019-03-10</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/CV/">CV</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">CS231n学习笔记:Lecture2~4</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="Lecture-2-KNN与线性分类器"><a href="#Lecture-2-KNN与线性分类器" class="headerlink" title="Lecture 2 : KNN与线性分类器"></a>Lecture 2 : KNN与线性分类器</h2><h3 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h3><p>CNN(nearest neighbor classifier):选取训练集中与之距离最近的图像的标签作为分类</p>
+<p>距离：<code>L1 distance</code>:曼哈顿距离  <code>L2 distance</code>:欧几里得距离</p>
+<p>距离是一个超参数(hyperparameter)</p>
+<p>时间与训练集的大小成线性关系</p>
+<p>kNN(k-nearest neighbor):选取训练集中k个最相近的图像，对它们的标签进行多数表决</p>
+<h3 id="线性分类器"><a href="#线性分类器" class="headerlink" title="线性分类器"></a>线性分类器</h3><p>$$f(W,x,b) = Wx + b$$</p>
+<p>假定图片是一张32*32的只有RGB3通道的图片，则其像素点可以组合为一个3072*1的向量x(3072 = 32*32*3)，而矩阵W的大小为10*3072(10为标签中的类别数),由$W_{10*3072}x_{3072*1} + b_{10*1}=y_{10*1}$计算得到一个10维向量，每一维都代表在某一类中的分数。</p>
+<p>一个很好理解的线性分类器图示：<br><img src="/2019/03/10/CS231n学习笔记-Lecture2-4/linear.png" alt="&quot;线性分类器图示&quot;"></p>
+<h2 id="Lecture-3-损失函数"><a href="#Lecture-3-损失函数" class="headerlink" title="Lecture 3 : 损失函数"></a>Lecture 3 : 损失函数</h2><p>$$L = \frac{1}{N}\sum_{i=1}^{N}L_i+\lambda R(W)$$</p>
+<p>$L$: 总损失</p>
+<p>$L_i$:每个测试数据的损失</p>
+<p>$\lambda$:正则化强度(regularization strength)，超参数</p>
+<blockquote>
+<p>note:这里的正则化和对数据进行归一化的normalization没有关系</p>
+</blockquote>
+<h3 id="Regularization-正则化"><a href="#Regularization-正则化" class="headerlink" title="Regularization 正则化"></a>Regularization 正则化</h3><p>L2正则化（最常用）：$\sum_k\sum_lW_{K,l}^2$</p>
+<p>L1正则化：$\sum_k\sum_l|W_{K,l}|$</p>
+<p>Elastic Net(L1+L2): $\sum_k\sum_l\beta W_{K,l}+|W_{K,l}|^2$</p>
+<p>直观理解正则化的作用：利用尽可能多的W维度</p>
+<p>假设图像转化的向量$x = [1,1,1,1]$,类A对应矩阵W中某一行$W_i$，$W_i = [1,0,0,0]$和$W_i = [0.25,0.25,0.25,0.25]$的情况下，该图像在类A的得分都为$W_ix^T = 1$，但$[1,0,0,0]$的正则化损失为1，$[0.25,0.25,0.25,0.25]$的正则化损失为0.25,因此选用后者，原因在于其考虑了4个维度上的信息而前者完全忽略了后面三项的信息。</p>
+<h3 id="data-loss"><a href="#data-loss" class="headerlink" title="data loss"></a>data loss</h3><p>SVM loss:</p>
+<p>$$L_i = \sum_{j\neq y_i}max(0,s_j-s_{y_i}+1)$$</p>
+<p><img src="/2019/03/10/CS231n学习笔记-Lecture2-4/SVM.png" alt="img2"></p>
+<p>softmax loss:</p>
+<p>$$L_i = -log(\frac{e^{s_{y_i}}}{\sum_je^{s_j}})$$</p>
+<blockquote>
+<p>note:softmax也给出了该测试图像属于某类别的概率</p>
+</blockquote>
+<p><img src="/2019/03/10/CS231n学习笔记-Lecture2-4/softmax.png" alt="img3"></p>
+<h2 id="Lecture-4-反向传播"><a href="#Lecture-4-反向传播" class="headerlink" title="Lecture 4 : 反向传播"></a>Lecture 4 : 反向传播</h2><p>利用求偏导的链式法则，从后往前推的过程。</p>
+<p>如图，最终结果关于x的偏导数$\frac{\partial{f}}{\partial{x}} = \frac{\partial{f}}{\partial{q}}\frac{\partial{q}}{\partial{x}} = z\frac{\partial{(x+y)}}{\partial{x}} = z*1 = z = -4$</p>
+<p>其中,z的值需要在前向过程中先计算得出并存储，才能在反向传播中被使用。反向传播计算偏导（梯度）需要反向过程中从下游传来的偏导(梯度)值,此处即$\frac{\partial{f}}{\partial{q}}$的值</p>
+<p>计算出x的梯度为-4，即，x增大，f减小。若f为损失函数，则应减小x从而减小损失，这就是优化W的过程。</p>
+<p><img src="/2019/03/10/CS231n学习笔记-Lecture2-4/grad1.png" alt="img4"></p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/02/26/OS-Minilab-01-pstree/" title="OS Minilab 01 - pstree">OS Minilab 01 - pstree</a></h2>
+                <p class="excerpt">
+                
+                Minilab1中学习到的一些有用的技巧。
+解析命令行选项使用getopt_long函数（头文件&amp;lt;getopt.h&amp;gt;）
+参数1、2：argc,argv
+参数3：识别的短选项，如需识别-p -V -n(均不带参数)，则该项为&amp;quot;pVn&amp;quot;
+参数4：识别长选项，定义一个如下结
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-02-26T13:52:00.000Z" class="post-list__meta--date date">2019-02-26</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/OS/">OS</a>
+</span><a class="btn-border-small" href="/2019/02/26/OS-Minilab-01-pstree/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 leafeonia - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+  
+         <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+    
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+   
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f3be04432e71aba12046174e82dfba5b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-70},"mobile":{"show":true,"scale":0.3},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
