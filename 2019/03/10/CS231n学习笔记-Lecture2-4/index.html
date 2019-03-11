@@ -172,6 +172,13 @@
 <p>其中,z的值需要在前向过程中先计算得出并存储，才能在反向传播中被使用。反向传播计算偏导（梯度）需要反向过程中从下游传来的偏导(梯度)值,此处即$\frac{\partial{f}}{\partial{q}}$的值</p>
 <p>计算出x的梯度为-4，即，x增大，f减小。若f为损失函数，则应减小x从而减小损失，这就是优化W的过程。</p>
 <p><img src="/2019/03/10/CS231n学习笔记-Lecture2-4/grad1.png" alt="img4"></p>
+<h2 id="一个理解的样例"><a href="#一个理解的样例" class="headerlink" title="一个理解的样例"></a>一个理解的样例</h2><p>CS231n课程提供了一个理解上述内容的很好的网站：<a href="http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/" target="_blank" rel="noopener">http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/</a></p>
+<p>对于该网页中的初始数据，欲求总损失关于第一个点的$x_0,x_1$坐标的偏导，推导如下：</p>
+<p><img src="/2019/03/10/CS231n学习笔记-Lecture2-4/analysis.png" alt="img4"></p>
+<p><br></p>
+<p><img src="https://i.loli.net/2019/03/11/5c85fba6b105c.jpg" alt="photo.jpg"></p>
+<p>可以看到，该点坐标向$x_0,x_1$正方向移动，都会使得总损失减小。且在$x_1$方向上的梯度-0.22比在$x_0$方向上的梯度-0.11更小，因此向$x_1$正方向移动对总损失的负反馈会更显著。这与图中蓝色线的箭头方向以及斜率一致。</p>
+<p>（本来想算的是总损失关于$W_{0,0}$的偏导，算到一半才发现要将9个坐标点算出的偏导值相加，而不只是1个点，工作量太大弃坑了orz）</p>
 
   </section>
 
