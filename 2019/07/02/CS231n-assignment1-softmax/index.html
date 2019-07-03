@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>CS231n assignment1: softmax | Leafeon&#39;s Place</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="因为那边有天空">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CS231n assignment1: softmax | Leafeon&#39;s Place">
+    <meta name="twitter:description" content="因为那边有天空">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CS231n assignment1: softmax | Leafeon&#39;s Place">
+    <meta property="og:description" content="因为那边有天空">
+
+    
+    <meta name="author" content="leafeonia">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar.jpg">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://leafeonia.github.io/2019/07/02/CS231n-assignment1-softmax/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(https://i.loli.net/2019/02/12/5c61a0fe7943a.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Leafeon&#39;s Place 的主页"><img src="/images/avatar.jpg" width="80" alt="Leafeon&#39;s Place logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Leafeon&#39;s Place">Leafeon&#39;s Place</a></h1>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">因为那边有天空</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
+            
+              <li class="navigation__item"><a href="/garden/garden.html">后花园</a></li>
+            
+              <li class="navigation__item"><a href="/projects/projects.html">幻想乡</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/leafeonia" title="GitHub" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-07-02T14:11:19.000Z" class="post-list__meta--date date">2019-07-02</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/CV/">CV</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">CS231n assignment1: softmax</h1>
+  </header>
+
+  <section class="post">
+    <p>assignment内容:</p>
+<p>This exercise is analogous to the SVM exercise. You will:</p>
+<ul>
+<li>implement a fully-vectorized loss function for the Softmax classifier</li>
+<li>implement the fully-vectorized expression for its analytic gradient</li>
+<li>check your implementation with numerical gradient</li>
+<li>use a validation set to tune the learning rate and regularization strength</li>
+<li>optimize the loss function with SGD</li>
+<li>visualize the final learned weights</li>
+</ul>
+<h2 id="load-data"><a href="#load-data" class="headerlink" title="load data"></a>load data</h2><p>按softmax.ipynb中的内容展开。首先是读取数据集：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">def get_CIFAR10_data(num_training=49000, num_validation=1000, num_test=1000, num_dev=500):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    Load the CIFAR-10 dataset from disk and perform preprocessing to prepare</span><br><span class="line">    it for the linear classifier. These are the same steps as we used for the</span><br><span class="line">    SVM, but condensed to a single function.  </span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    # Load the raw CIFAR-10 data</span><br><span class="line">    cifar10_dir = &apos;cs231n/datasets/cifar-10-batches-py&apos;</span><br><span class="line">    X_train, y_train, X_test, y_test = load_CIFAR10(cifar10_dir)</span><br><span class="line">    </span><br><span class="line">    # subsample the data</span><br><span class="line">    mask = list(range(num_training, num_training + num_validation))</span><br><span class="line">    X_val = X_train[mask]</span><br><span class="line">    y_val = y_train[mask]</span><br><span class="line">    mask = list(range(num_training))</span><br><span class="line">    X_train = X_train[mask]</span><br><span class="line">    y_train = y_train[mask]</span><br><span class="line">    mask = list(range(num_test))</span><br><span class="line">    X_test = X_test[mask]</span><br><span class="line">    y_test = y_test[mask]</span><br><span class="line">    mask = np.random.choice(num_training, num_dev, replace=False)</span><br><span class="line">    X_dev = X_train[mask]</span><br><span class="line">    y_dev = y_train[mask]</span><br><span class="line">    </span><br><span class="line">    # Preprocessing: reshape the image data into rows</span><br><span class="line">    X_train = np.reshape(X_train, (X_train.shape[0], -1))</span><br><span class="line">    X_val = np.reshape(X_val, (X_val.shape[0], -1))</span><br><span class="line">    X_test = np.reshape(X_test, (X_test.shape[0], -1))</span><br><span class="line">    X_dev = np.reshape(X_dev, (X_dev.shape[0], -1))</span><br><span class="line">    </span><br><span class="line">    # Normalize the data: subtract the mean image</span><br><span class="line">    mean_image = np.mean(X_train, axis = 0)</span><br><span class="line">    X_train -= mean_image</span><br><span class="line">    X_val -= mean_image</span><br><span class="line">    X_test -= mean_image</span><br><span class="line">    X_dev -= mean_image</span><br><span class="line">    </span><br><span class="line">    # add bias dimension and transform into columns</span><br><span class="line">    X_train = np.hstack([X_train, np.ones((X_train.shape[0], 1))])</span><br><span class="line">    X_val = np.hstack([X_val, np.ones((X_val.shape[0], 1))])</span><br><span class="line">    X_test = np.hstack([X_test, np.ones((X_test.shape[0], 1))])</span><br><span class="line">    X_dev = np.hstack([X_dev, np.ones((X_dev.shape[0], 1))])</span><br><span class="line">    </span><br><span class="line">    return X_train, y_train, X_val, y_val, X_test, y_test, X_dev, y_dev</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Invoke the above function to get our data.</span><br><span class="line">X_train, y_train, X_val, y_val, X_test, y_test, X_dev, y_dev = get_CIFAR10_data()</span><br><span class="line">print(&apos;Train data shape: &apos;, X_train.shape)</span><br><span class="line">print(&apos;Train labels shape: &apos;, y_train.shape)</span><br><span class="line">print(&apos;Validation data shape: &apos;, X_val.shape)</span><br><span class="line">print(&apos;Validation labels shape: &apos;, y_val.shape)</span><br><span class="line">print(&apos;Test data shape: &apos;, X_test.shape)</span><br><span class="line">print(&apos;Test labels shape: &apos;, y_test.shape)</span><br><span class="line">print(&apos;dev data shape: &apos;, X_dev.shape)</span><br><span class="line">print(&apos;dev labels shape: &apos;, y_dev.shape)</span><br></pre></td></tr></table></figure>
+<p>output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Train data shape:  (49000, 3073)</span><br><span class="line">Train labels shape:  (49000,)</span><br><span class="line">Validation data shape:  (1000, 3073)</span><br><span class="line">Validation labels shape:  (1000,)</span><br><span class="line">Test data shape:  (1000, 3073)</span><br><span class="line">Test labels shape:  (1000,)</span><br><span class="line">dev data shape:  (500, 3073)</span><br><span class="line">dev labels shape:  (500,)</span><br></pre></td></tr></table></figure></p>
+<p>此处理解一下，数据集的总大小为50000张32*32*3的training图片和1000张同样尺寸的test图片，其中training set的前49000张用来训练(train)，后1000张用来验证(validation),前49000张中任选500张作为development set,其作用是作为一个小数据集测试接下来要实现的loss函数。</p>
+<h2 id="compute-loss-–-naive-approach"><a href="#compute-loss-–-naive-approach" class="headerlink" title="compute loss – naive approach"></a>compute loss – naive approach</h2><p>用显式循环的方式计算loss。</p>
+<p>softmax loss的计算公式为：</p>
+<p>$$L_i = -ln(\frac{e^{s_{y_i}}}{\sum_je^{s_j}})$$</p>
+<p>对应代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">loss = 0.0</span><br><span class="line">score = X.dot(W)</span><br><span class="line">N = score.shape[0]</span><br><span class="line">C = score.shape[1]</span><br><span class="line">score = np.exp(score)</span><br><span class="line">sum = np.sum(score,axis=1)</span><br><span class="line">for i in range(N):</span><br><span class="line">  loss += -np.log(score[i][y[i]] / sum[i])</span><br><span class="line">loss /= N</span><br><span class="line">loss += reg * np.sum(W*W)</span><br></pre></td></tr></table></figure></p>
+<p>这里算是本assignment最简单的部分，运用公式直接计算，也不涉及向量化操作。注意np.log即为ln,此处省略了底数e。</p>
+<h3 id="Inline-Question-1"><a href="#Inline-Question-1" class="headerlink" title="Inline Question 1:"></a>Inline Question 1:</h3><p>Why do we expect our loss to be close to -log(0.1)? Explain briefly.</p>
+<p><strong>Your answer:</strong> <em>loss_i = -exp(P(correct class)) and since there are 10 classes in total P(correct class) is close to 0.1. Therefore loss is expected to be close to -log(0.1)</em></p>
+<h2 id="compute-grad-–-naive-approach"><a href="#compute-grad-–-naive-approach" class="headerlink" title="compute grad – naive approach"></a>compute grad – naive approach</h2><p>使用微积分进行推导。</p>
+<p>$$L_i = -ln(\frac{e^{s_{y_i}}}{\sum_ke^{s_k}}) = s_{y_i} + ln(\sum_ke^{s_k})$$</p>
+<p>上述$L_i$的表达式中，$s_k$对应于代码里的score[i][k]</p>
+<p>则 j $\neq y_i$时 </p>
+<p>$$\frac{\partial{L_i}}{\partial{s_j}} = \frac{e^{s_j}}{\sum_ke^{s_k}}$$</p>
+<p>此处$L_i$和$s_j$都是一个数。</p>
+<p>而</p>
+<p>$$\frac{\partial{s_j}}{\partial{w_j}} = x_i^T$$</p>
+<p>此处$s_j$是一个数，而$w_j$是(D,1)列向量，$x_i$为(1,D)行向量,转置后为(D,1)列向量。</p>
+<p>如何理解一个数对一个向量求导？因为score = X.dot(W),所以$s_j = x_{i0}w_{0j} + x_{i1}w_{1j} + … + x_{id}w_{dj}$，记$w_j = [w_{0j},w_{1j},…,w_{dj}]^T$，则$s_j$可以看作一个关于$w_j$的函数f。故$\frac{\partial{s_j}}{\partial{w_j}} = \frac{\partial{f}}{\partial{w_j}} = [\frac{\partial{f}}{\partial{w_0j}}, \frac{\partial{f}}{\partial{w_1j}},…,\frac{\partial{f}}{\partial{w_dj}}]^T = [x_{i0},x_{i1},…,x_{id}]^T = x_i^T$</p>
+<p>直观示意图：</p>
+<p><br></p>
+<p><img src="/2019/07/02/CS231n-assignment1-softmax/1.jpg" width="60%"></p>
+<p><br></p>
+<p>由链式法则，$\frac{\partial{L_i}}{\partial{w_j}}  =\frac{\partial{L_i}}{\partial{s_j}}\frac{\partial{s_j}}{\partial{w_j}} = \frac{e^{s_j}}{\sum_ke^{s_k}}x_i^T$</p>
+<p>同理,$j = y_i$时，</p>
+<p>$$\frac{\partial{L_i}}{\partial{s_j}} = -1 + \frac{e^{s_j}}{\sum_ke^{s_k}}$$</p>
+<p><br></p>
+<p>$$\frac{\partial{L_i}}{\partial{w_j}}  =\frac{\partial{L_i}}{\partial{s_j}}\frac{\partial{s_j}}{\partial{w_j}} = (-1+\frac{e^{s_j}}{\sum_ke^{s_k}})x_i^T$$</p>
+<p>最后根据</p>
+<p>$$L = \frac{1}{N}\sum_{i=1}^{N}L_i+\lambda R(W)$$</p>
+<p>将dW除以N再加上正则化处理即得最终结果。</p>
+<p>代码实现:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">dW = np.zeros_like(W)</span><br><span class="line">score = X.dot(W)</span><br><span class="line">N = score.shape[0]</span><br><span class="line">C = score.shape[1]</span><br><span class="line">score = np.exp(score)</span><br><span class="line">sum = np.sum(score,axis=1)</span><br><span class="line">prob = np.zeros_like(score) #(N,C), i.e.(500,10)</span><br><span class="line">for i in range(N):</span><br><span class="line">  prob[i] = score[i] / sum[i]</span><br><span class="line">  for j in range(C):</span><br><span class="line">    if j == y[i]:</span><br><span class="line">      dW[:,j] += (prob[i][j] - 1) * X[i].T</span><br><span class="line">    else:</span><br><span class="line">      dW[:,j] += prob[i][j] * X[i].T</span><br><span class="line">dW /= N</span><br><span class="line">dW += 2 * reg * W</span><br></pre></td></tr></table></figure>
+<h2 id="compute-loss-–-vectorized-approach"><a href="#compute-loss-–-vectorized-approach" class="headerlink" title="compute loss – vectorized approach"></a>compute loss – vectorized approach</h2><p>使用无显式循环的方式计算loss。观察naive approach的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">loss = 0.0</span><br><span class="line">score = X.dot(W)</span><br><span class="line">N = score.shape[0]</span><br><span class="line">C = score.shape[1]</span><br><span class="line">score = np.exp(score)</span><br><span class="line">sum = np.sum(score,axis=1)</span><br><span class="line">for i in range(N):</span><br><span class="line">  loss += -np.log(score[i][y[i]] / sum[i])</span><br><span class="line">loss /= N</span><br><span class="line">loss += reg * np.sum(W*W)</span><br></pre></td></tr></table></figure></p>
+<p>如下图所示，naive approach是一行一行地根据y[i]选择score[i][y[i]]，并除以sum[i]再取负对数得到$L_i$。</p>
+<p><br></p>
+<p><img src="/2019/07/02/CS231n-assignment1-softmax/2.jpg" width="60%"></p>
+<p><br></p>
+<p>为了消除显式循环，需要使用numpy中的花式索引。对于一个2darray,使用两个list进行索引即可得到我们所需要的1darray.具体来说，下面代码中的<code>prob[range(N),list(y)]</code>中的<code>range(N)</code>为第一个list，指定索引的行（所有行）；<code>list(y)</code>为第二个list，指定每行中要索引的列。使用花式索引，就可以不使用循环而得到上图中score中被红色框起来的所有项组成的1darray。注意sum需要通过reshape将shape由(N,)变为(N,1),否则score作为2darray是无法直接除以1darray的，而转化为N*1的2darray之后就可以利用广播机制进行直接相除，得到与score形状一致的2darray prob.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">score = X.dot(W)</span><br><span class="line">score = np.exp(score)</span><br><span class="line">sum = np.sum(score, axis=1).reshape(-1, 1)</span><br><span class="line">prob = score / sum</span><br><span class="line">prob_correct_class = prob[range(N), list(y)]</span><br><span class="line">print(prob_correct_class.shape)</span><br><span class="line">loss = np.sum(-np.log(prob_correct_class))</span><br><span class="line">loss = loss / N + np.sum(W*W)</span><br></pre></td></tr></table></figure>
+<h2 id="compute-grad-–-vectorized-approach"><a href="#compute-grad-–-vectorized-approach" class="headerlink" title="compute grad – vectorized approach"></a>compute grad – vectorized approach</h2><p>首先回到naive approach的计算公式：</p>
+<p>$$\frac{\partial{L_i}}{\partial{w_j}}=\frac{e^{s_j}}{\sum_ke^{s_k}}x_i^T  (j = y_i) $$ </p>
+<p>$$\frac{\partial{L_i}}{\partial{w_j}}=(-1+\frac{e^{s_j}}{\sum_ke^{s_k}})x_i^T  (j \neq y_i) $$</p>
+<p>而$\frac{e^{s_j}}{\sum_ke^{s_k}}$即为prob[i][j]。因此不用显式循环的方法即将prob与X进行矩阵相乘。因为dW的形状为D*C,prob的形状为N*C,X的形状为N*D,所以$X^Tprob = dW$.</p>
+<p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">prob[range(N), list(y)] -= 1</span><br><span class="line">dW = (X.T).dot(prob)</span><br><span class="line">dW = dW / N + 2 * reg * W</span><br></pre></td></tr></table></figure>
+<h2 id="玄学调参"><a href="#玄学调参" class="headerlink" title="玄学调参"></a>玄学调参</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># Use the validation set to tune hyperparameters (regularization strength and</span><br><span class="line"># learning rate). You should experiment with different ranges for the learning</span><br><span class="line"># rates and regularization strengths; if you are careful you should be able to</span><br><span class="line"># get a classification accuracy of over 0.35 on the validation set.</span><br><span class="line">from cs231n.classifiers import Softmax</span><br><span class="line">results = &#123;&#125;</span><br><span class="line">best_val = -1</span><br><span class="line">best_softmax = None</span><br><span class="line">learning_rates = [1e-7, 5e-7]</span><br><span class="line">regularization_strengths = [2.5e4, 5e4]</span><br><span class="line"></span><br><span class="line">################################################################################</span><br><span class="line"># TODO:                                                                        #</span><br><span class="line"># Use the validation set to set the learning rate and regularization strength. #</span><br><span class="line"># This should be identical to the validation that you did for the SVM; save    #</span><br><span class="line"># the best trained softmax classifer in best_softmax.                          #</span><br><span class="line">################################################################################</span><br><span class="line">for lr in np.linspace(1e-7,5e-7,5):</span><br><span class="line">    for rs in np.linspace(2.5e4,5e4,8):</span><br><span class="line">        softmax = Softmax()</span><br><span class="line">        softmax.train(X_train,y_train,lr,rs,100,100,True)</span><br><span class="line">        y_pred_train = softmax.predict(X_train)</span><br><span class="line">        y_pred_val = softmax.predict(X_val)</span><br><span class="line">        train_accuracy = np.mean(y_train == y_pred_train)</span><br><span class="line">        val_accuracy = np.mean(y_val == y_pred_val)</span><br><span class="line">        results[(lr,rs)] = train_accuracy, val_accuracy</span><br><span class="line">        if val_accuracy &gt; best_val:</span><br><span class="line">            best_val = val_accuracy</span><br><span class="line">            best_softmax = softmax</span><br><span class="line">################################################################################</span><br><span class="line">#                              END OF YOUR CODE                                #</span><br><span class="line">################################################################################</span><br><span class="line">    </span><br><span class="line"># Print out results.</span><br><span class="line">for lr, reg in sorted(results):</span><br><span class="line">    train_accuracy, val_accuracy = results[(lr, reg)]</span><br><span class="line">    print(&apos;lr %e reg %e train accuracy: %f val accuracy: %f&apos; % (</span><br><span class="line">                lr, reg, train_accuracy, val_accuracy))</span><br><span class="line">    </span><br><span class="line">print(&apos;best validation accuracy achieved during cross-validation: %f&apos; % best_val)</span><br></pre></td></tr></table></figure>
+<p>调参的思路很简单，不过这部分代码中还有其他学习到的东西。</p>
+<ol>
+<li>源代码中有这样的代码段：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Softmax(LinearClassifier):</span><br><span class="line">  &quot;&quot;&quot; A subclass that uses the Softmax + Cross-entropy loss function &quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">  def loss(self, X_batch, y_batch, reg):</span><br><span class="line">    return softmax_loss_vectorized(self.W, X_batch, y_batch, reg)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>因此<code>Softmax</code>是<code>LinearClassifier</code>的子类，而<code>Softmax</code>类的对象亦可以直接调用<code>LinearClassifier</code>的<code>train</code>方法和<code>predict</code>方法。而best_softmax直接将最优softmax对象进行存储，无需分别存储最优情况下的各个参数。</p>
+<ol start="2">
+<li>统计accuracy的便捷方法</li>
+</ol>
+<blockquote>
+<p>np.mean(y_train == y_pred_train)</p>
+</blockquote>
+<ol start="3">
+<li>以tuple作为key,直接添加多个元素：</li>
+</ol>
+<blockquote>
+<p>results[(lr,rs)] = train_accuracy, val_accuracy</p>
+</blockquote>
+<p>最后最高正确率34.1%，可。应用在测试集上，正确率为30.6%。这里体现出不到最后调好参坚决不用测试集的伟大思想（</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2019/03/10/CS231n学习笔记-Lecture2-4/" title="CS231n学习笔记:Lecture2~4">CS231n学习笔记:Lecture2~4</a></h2>
+                <p class="excerpt">
+                
+                Lecture 2 : KNN与线性分类器KNNNearest neighbor classifier:选取训练集中与之距离最近的图像的标签作为分类
+距离：L1 distance:曼哈顿距离  L2 distance:欧几里得距离
+距离是一个超参数(hyperparameter)
+时间与训练集的大小
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2019-03-10T08:52:34.000Z" class="post-list__meta--date date">2019-03-10</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/CV/">CV</a>
+</span><a class="btn-border-small" href="/2019/03/10/CS231n学习笔记-Lecture2-4/">继续阅读</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 leafeonia - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+  
+         <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+    
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+   
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f3be04432e71aba12046174e82dfba5b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-70},"mobile":{"show":true,"scale":0.3},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
