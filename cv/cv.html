@@ -74,7 +74,7 @@ function na() {
         <b>Dear Professor:</b><br> Hi! Thanks for reviewing my application! This personal website may provide more information for your reference:
         <ul>
             <li> <a href="#sec: Biography">[Biography]</a> section introduces my education background briefly.
-            <li> <a href="#sec: Project & Experience">[Project & Experience]</a> section includes detailed descriptions about my research project and related experience;
+            <li> <a href="#sec: Research & Experience">[Research & Experience]</a> section includes detailed descriptions about my research project and related experience.
             <li> <a href="#sec: Awards & Honors">[Awards & Honors]</a> section lists some awards and honors I achieved during undergraduate.
             <li> <a href="#sec: Internship">[Internship]</a> section introduces my internship which proves my capability of handling complicated projects.
             <li> <a href="#sec: Miscellaneous">[Miscellaneous]</a> section presents my extracurricular activities in diverse aspects.
@@ -98,46 +98,64 @@ function na() {
 <a href="#title">[go top]</a></p>
 <br>
 
-<h1 class="separator", id="sec: Project & Experience">Project & Experience</h1>
+<h1 class="separator", id="sec: Research & Experience">Research & Experience</h1>
 <ul>
-<li><p style="text-align:justify; line-height:20px"><b>Evaluate</b><small> 2019.9-2020.1</small><br>
+<li><p style="text-align:justify; line-height:20px"><b>
+    Nanjing University <a href="http://mcg.nju.edu.cn/en/index.html" target="_blank">MCG group</a> research.</b> <small>2019.9-2020.1</small><br>
     <table border="0" cellpadding="10" width="100%">
         <tbody>
         <tr>
             <td valign="middle" align="right" width="300"><img src="./files/1.png" alt="Image" width="300" height="220"></td>
             <td><p style="text-align:justify; line-height:20px">
-    Leading 12 members of the section, responsible for external liaison, handling various matters and was trusted by members, these are what I did and got as the leader of External Relations Section.
-    As one of the main organizers, I participated in the planning of Nanjing University’s largest department welcome party in recent years, which attracted more than 4,000 spectators.
-    As the team leader, I accumulated a lot of team management experience and communication skills in practice, and is more adept at teamwork and public expression.<br>
+    Supervised by <a href="http://mcg.nju.edu.cn/member/gswu/en/index.html" target="_blank">Prof. Gangshan Wu</a>,
+    I worked on evaluating the accuracy of people doing the same action by understanding the pose information in video. To be more specific, I extract
+    joint position based on <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">openpose</a>, then compute the list of joint angle chronologically.
+    Even people who are doing the exact same action cannot have the same joint angle list on frame level, so dynamic time warping algorithm is used to compute
+    the accumulated distance to evaluate the similarity between the two lists. I also extend the evaluation process to 3D, given joint coordinates.
+    Under such circumstance, the body plane is used as reference plane and dynamic time warping algorithm is used in three dimensions respectively.
+    The final computed result nicely reflects the accuracy between poses in two videos.
 </p>
     </td>
     </tr>
     </tbody>
     </table>
 </li>
-<li><p style="text-align:justify; line-height:20px"><b>
-    Nanjing University <a href="http://mcg.nju.edu.cn/en/index.html" target="_blank">MCG group</a> research.</b> <small>2019.9-2020.1</small><br>
-    Supervised by <a href="http://mcg.nju.edu.cn/member/gswu/en/index.html" target="_blank">Prof. Gangshan Wu</a>,
-    I worked on evaluating the accuracy of two people doing the same action.
-<li><p style="text-align:justify; line-height:20px"><b>Big Data Challenge, 2017 China's College Computer Competition.</b> <small>2017.7-2017.8</small><br>
+
+<li><p style="text-align:justify; line-height:20px"><b>Face composition and style transfer.</b> <small>2019.9-2020.1</small><br>
     <table border="0" cellpadding="10" width="100%">
         <tbody>
         <tr>
             <td valign="middle" align="right" width="350"><img src="./files/2-1.png" alt="Image" width="220" height="220"><img src="./files/2-2.png" alt="Image" width="130" height="220"></td>
             <td><p style="text-align:justify; line-height:20px">
-    Leading 12 members of the section, responsible for external liaison, handling various matters and was trusted by members, these are what I did and got as the leader of External Relations Section.
-    As one of the main organizers, I participated in the planning of Nanjing University’s largest department welcome party in recent years, which attracted more than 4,000 spectators.
-    As the team leader, I accumulated a lot of team management experience and communication skills in practice, and is more adept at teamwork and public expression.<br>
-</p>
+    I completed a face image transformation system cooperated with my classmates. The basic idea
+    is to use a "styleGAN encoder" which converts images to features in the form of vectors. The features are much easier to manipulate numerically. To mix two faces
+    just compute the average of the features, then use styleGAN to convert the feature to image again.
+    Add trained smile feature to origin feature can make the original face smile as well. By setting coefficient as user input,
+    the extent one smiles or the ratio two faces respectively count can be dynamic adjusted as well, giving this project high practical value.
+    </p>
     </td>
     </tr>
     </tbody>
     </table>
 </li>
 
-<li><p style="text-align:justify; line-height:20px"><b>Duke University Research Independent Study.</b> <small>2016.8-2016.12</small><br>I worked with <a href="https://users.cs.duke.edu/~tomasi/" target="_blank">Prof. Carlo Tomasi</a> to find path metrics to interpret and visualize the topology of the MNIST dataset (hand-written digits). By defining the local distance based on Earth Mover’s Distance between images and then designing global path metrics, I tried to build a graph to capture the overall structure of the dataset. We also tried Manifold Learning to embed data into a low-dimensional space. Specifically, we defined the global path metrics as: 1. max gap in the path, 2. the sum of local distances along path, 3. topological length (number of edges), 4. some hybrid definitions with norms or exponential functions. We ran adapted Dijkstra's Algorithm to find the shortest path between images and subsequently used this information to build the graph. As the application, we can apply our method to Semi-supervised Learning (to match every unlabelled image with its nearest labelled peer) and Manifold Learning (to embed data into a low-dimensional space by Multi-Dimensional Scaling, etc.). <a href="#" onclick="na()" value="N/A"><font color="#ff0000"><u>[Download a writing sample]</u></font></a><br>&nbsp</p>
+<li><p style="text-align:justify; line-height:20px"><b>Self-study computer vision course Stanford cs231n.</b> <small>2019.2-2019.8</small><br>
+    Following the suggestion of <a href="http://mcg.nju.edu.cn/member/gswu/en/index.html" target="_blank">Prof. Gangshan Wu</a>,
+    I self-studied the famous computer vision course Stanford cs231n and completed the assignments, code link is <a href="https://github.com/leafeonia/cs231n_assignment">here</a>.
+    Thanks to the course I learned many computer vision and deep learning related knowledge, such as the theory behind neural network
+    and the function of different layers, and gain a more comprehensive understanding of the domain foundation.<br>&nbsp</p>
 
-<li><p style="text-align:justify; line-height:20px"><b>Mathematical Contest in Modeling (MCM 2016).</b> <small>2016.2</small><br> In this project, we worked on mathematical modeling and problem solving for space junk. Specifically, we first collected data to show the spatial, time and size distribution of space debris, and then analyzed the potential benefits of three proposed space junk removal methods by Quadratic Programming and Analytic Hierarchy Process (AHP). Afterwards, we discussed how to make an economically attractive strategy to remove space debris. Our final result was Meritorious Winner (top 8%). <a href="#" onclick="na()" value="N/A"><font color="#ff0000"><u>[Download a writing sample]</u></font></a> (This project was finished within 96 hours, so the report was far from perfection.)<br>&nbsp</p>
+<li><p style="text-align:justify; line-height:20px"><b>Participate in the innovative project "Investment Guide for B&B
+    Based on Machine Learning - Take Nanjing as an Example".</b> <small>2018.9-2019.6</small><br>
+    Served as the technical backbone of the team, I was responsible for data crawling, data cleaning and models training. The project uses
+    linear regression model and
+    can effectively predict the price of flats based on input information such as area, number of rooms and its position in Nanjing city,
+    thus give investors a valuable guide on B&B or flat rent investment.
+    <br>&nbsp</p>
+
+    <li><p style="text-align:justify; line-height:20px"><b>Hong Kong academic exchange.</b> <small>2019.2</small><br>
+        In February 2019 I visited a series of Hong Kong universities including HKU, HKUST, CUHK and PolyU. During visiting HKUST, I participated in a Kaggle competition on predicting the running time of sklearn program and worked as leader of our team. It is an interesting and instructive competition because we can use the sklearn library itself to predict the running time of sklearn program. I did most of data preprocessing and code work. This experience provided me with a more concrete understanding of machine learning.
+        <br>&nbsp</p>
 
 </ul>
 <a href="#title">[go top]</a>
