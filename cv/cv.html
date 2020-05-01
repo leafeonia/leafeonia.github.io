@@ -74,9 +74,8 @@ function na() {
         <b>Dear Professor:</b><br> Hi! Thanks for reviewing my application! This personal website may provide more information for your reference:
         <ul>
             <li> <a href="#sec: Biography">[Biography]</a> section introduces my education background briefly.
-            <li> <a href="#sec: Research Interest">[Research Interest]</a> section about what I am interested to do and how I can help during the research.
             <li> <a href="#sec: Internship">[Internship]</a> section related to my internship experience, which proves my capability of handling complex projects.
-            <li> <a href="#sec: Research Project & Experience">[Research Project & Experience]</a> section includes detailed descriptions about my experience and research project.
+            <li> <a href="#sec: Research Projects & Experience">[Research Projects & Experience]</a> section includes detailed descriptions about my experience and research project.
             <li> <a href="#sec: Awards & Honors">[Awards & Honors]</a> section lists some awards and honors I achieved during undergraduate.
             <li> <a href="#sec: Miscellaneous">[Miscellaneous]</a> section presents my extracurricular activities in diverse aspects.
         </ul>
@@ -87,29 +86,30 @@ function na() {
 
 <br>
 <h1 class="separator", id="sec: Biography">Biography</h1>
-<p style="text-align:justify; line-height:20px">I was admitted to study in department of Computer Science and Technology, <a href="http://www.nju.edu.cn/EN/" target="_blank">Nanjing University</a> in September 2017, and joined the <i>National Elite Program of Computer Science</i> at Nanjing University after enrollment. I also attended <i>Vancouver Summer Program</i> at <a href="https://www.ubc.ca/" target="_blank">The University of British Columbia</a> in summer, 2019. You may see my latest CV <a href="./files/cv.pdf" target="_blank">here</a>.<br> <a href="#title">[go top]</a></p>
+<p style="text-align:justify; line-height:20px">I was admitted to study in department of Computer Science and Technology, <a href="http://www.nju.edu.cn/EN/" target="_blank">Nanjing University</a> in September 2017, and joined the <i>National Elite Program of Computer Science</i> at Nanjing University after enrollment. I also attended <i>Vancouver Summer Program</i> at <a href="https://www.ubc.ca/" target="_blank">The University of British Columbia</a> in summer, 2019. You may see my latest CV <a href="./files/cv.pdf" target="_blank">here</a>.<br> <a href="#title">
+    <br>[top]</a></p>
 <br>
 
-<h1 class="separator", id="sec: Research Interest">Research Interest</h1>
-<p style="text-align:justify; line-height:20px">I have achieved some knowledge and experience regarding to deep learning so I think I can
-    make more progress on it. My recent internship experience also triggers my interest on software related
-    topics. As an undergraduate, I am aware that I still have a long way to go, but I am ready for
-    new challenge and willing to work on any helpful task.<br>
-<a href="#title">[go top]</a></p>
-<br>
 
         <h1 class="separator", id="sec: Internship">Internship</h1>
-        <li><p style="text-align:justify; line-height:20px"><b>Internship in Microsoft.</b> <small>2020.1-2020.3</small><br> I Worked on enabling voice recognition feature for Office Mobile on Android devices, based on the well-known cortana module.
-            During this process, I dived into real industry-level projects and accumulated experience on complex project development.
-            I also cooperated with US colleagues, which not only make me get used to English working environment but also enhance my international communication skills greatly.<br>&nbsp</p>
+        <ul>
         <li><p style="text-align:justify; line-height:20px"><b>Internship in Tencent.</b> <small>2020.3-present</small><br>
             In Tencent I work for <i>Interactive Entertainment Group</i>, developing game client and engine. Currently I am focusing on converting game model to convex-hull physics collision model, along with detecting fissures and fixing holes on model automatically.
             The conversion process requires understanding of a certain physics engine, along with another library.
             I am capable of quickly familiarizing with them by reading documents and thus efficiently participate in the actual development process.<br>&nbsp</p>
 
-            <br>
+        <li><p style="text-align:justify; line-height:20px"><b>Internship in Microsoft.</b> <small>2020.1-2020.3</small><br> I worked on enabling voice recognition feature for Office Mobile on Android devices, based on the well-known cortana module.
+            During this process, I dived into real industry-level projects and accumulated experience on complex project development.
+            I also cooperated with US colleagues, which not only made me get used to English working environment, but also enhanced my international communication skills greatly.<br>&nbsp</p>
 
-<h1 class="separator", id="sec: Research Project & Experience">Research Project & Experience</h1>
+
+</li>
+
+        </ul>
+        <a href="#title">[top]<br></a><br>
+
+
+<h1 class="separator", id="sec: Research Projects & Experience">Research Projects & Experience</h1>
 <ul>
 
 
@@ -119,15 +119,15 @@ function na() {
     <table border="0" cellpadding="10" width="100%">
         <tbody>
         <tr>
-            <td valign="middle" align="right" width="450"><img src="./files/1.png" alt="Image" width="450" height="200"></td>
+            <td valign="middle" align="right" width="350"><img src="./files/1.png" alt="Image" width="350" height="150"></td>
             <td><p style="text-align:justify; line-height:20px">
     Supervised by <a href="http://mcg.nju.edu.cn/member/gswu/en/index.html" target="_blank">Prof. Gangshan Wu</a>,
-    I worked on evaluating the accuracy of people doing the same action by understanding the pose information in video. To be more specific, I extract
-    joint position based on <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">openpose</a>, then compute the list of joint angle chronologically.
-    Even people who are doing the exact same action cannot have the same joint angle list on frame level, so dynamic time warping algorithm is used to compute
-    the accumulated distance to evaluate the similarity between the two lists. I also extend the evaluation process to 3D, given joint coordinates.
-    Under such circumstance, the body plane is used as reference plane and dynamic time warping algorithm is used in three dimensions respectively.
-    The final computed result nicely reflects the accuracy between poses in two videos.
+    I worked on evaluating the accuracy of people doing the same action by understanding the pose information in video. To be more specific, I extracted
+    joint position based on <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">openpose</a>, then computed the list of joint angle chronologically.
+    Even people who are doing the exact same action cannot have the same joint angle list on frame level, so dynamic time warping algorithm was used to compute
+    the accumulated distance, thus evaluating the similarity between the two lists. I also extended the evaluation process to 3D if joint coordinates are provided.
+    Under such circumstance, the body plane was used as reference plane and dynamic time warping algorithm was applied in three dimensions respectively.
+    The final computed result nicely reflected the accuracy between poses in two videos.
 </p>
     </td>
     </tr>
@@ -142,7 +142,7 @@ function na() {
             <td valign="middle" align="right" width="350"><img src="./files/2-1.png" alt="Image" width="220" height="220"><img src="./files/2-2.png" alt="Image" width="130" height="220"></td>
             <td><p style="text-align:justify; line-height:20px">
     I completed a face image transformation system cooperated with my classmates. The basic idea
-    is to use a "<a href="https://github.com/pbaylies/stylegan-encoder">styleGAN encoder</a>" which converts images to features. The features are then much easier to manipulate numerically. To mix two faces
+    is to use a "<a href="https://github.com/pbaylies/stylegan-encoder">styleGAN encoder</a>" which converts images to features. The features are then much easier to manipulate numerically. To mix two faces,
     just compute the average of the features, then use styleGAN to convert the feature to image again.
     Adding trained smile feature to origin feature can make the original face smile as well. By setting coefficient as user input,
     the extent one smiles or the ratio two faces respectively count can be dynamic adjusted as well, giving this project high practical value.
@@ -153,44 +153,44 @@ function na() {
     </table>
 </li>
 
-<li><p style="text-align:justify; line-height:20px"><b>Self-study computer vision course Stanford cs231n.</b> <small>2019.2-2019.8</small><br>
-    Following the suggestion of <a href="http://mcg.nju.edu.cn/member/gswu/en/index.html" target="_blank">Prof. Gangshan Wu</a>,
+<li><p style="text-align:justify; line-height:20px"><b>Stanford cs231n course assignment</b> <small>2019.2-2019.8</small><br>
     I self-studied the famous computer vision course Stanford cs231n and completed the assignments, code link is <a href="https://github.com/leafeonia/cs231n_assignment">here</a>.
-    Thanks to the course I have learned lots of computer vision and deep learning related knowledge, such as the theory behind neural network
-    and the function of different layers, and gain a more comprehensive understanding of the domain foundation.<br>&nbsp</p>
+    During this process I have learned lots of computer vision and deep learning related knowledge, such as the theory behind neural network
+    and the function of different layers, and gained a more comprehensive understanding of the domain foundation.<br>&nbsp</p>
 
-<li><p style="text-align:justify; line-height:20px"><b>Participate in the innovative project "Investment Guide for B&B
+<li><p style="text-align:justify; line-height:20px"><b>Innovative project "Investment Guide for B&B
     Based on Machine Learning - Take Nanjing as an Example".</b> <small>2018.9-2019.6</small><br>
     Served as the technical backbone of the team, I was responsible for data crawling, data cleaning and models training. The project uses
     linear regression model and
-    can effectively predict the price of flats based on input information such as area, number of rooms and its position in Nanjing city,
-    thus give investors a valuable guide on B&B or flat rent investment.
+    could effectively predict the price of flats based on input information such as area, number of rooms and its position in Nanjing city,
+    thus giving investors a valuable guide on B&B or flat rent investment.
     <br>&nbsp</p>
 
-    <li><p style="text-align:justify; line-height:20px"><b>Hong Kong academic exchange.</b> <small>2019.2</small><br>
-        In February 2019 I visited a series of Hong Kong universities including HKU, HKUST, CUHK and PolyU. During visiting HKUST, I participated in a Kaggle competition on predicting the running time of sklearn program and worked as leader of our team. It is an interesting and instructive competition because we can use the sklearn library itself to predict the running time of sklearn program. I did most of data preprocessing and code work. This experience provided me with a more concrete understanding of machine learning.
+    <li><p style="text-align:justify; line-height:20px"><b>HKUST academic competition.</b> <small>2019.2</small><br>
+        In February 2019 I visited a series of Hong Kong universities including HKU, HKUST, CUHK and PolyU. During visiting HKUST, I participated in a Kaggle competition on predicting the running time of sklearn program and worked as leader of our team. It was an interesting and instructive competition because we could use the sklearn library itself to predict the running time of sklearn program. I did most of data preprocessing and code work. This experience provided me with a more concrete understanding of machine learning.
         <br>&nbsp</p>
 
 </ul>
-<a href="#title">[go top]</a>
+<a href="#title">[top]</a>
 <br><br>
 
         <!--<h1 class="separator", id="sec: Internship">Internship </h1>-->
 
-        <!--<a href="#title">[go top]</a>-->
+        <!--<a href="#title">[top]</a>-->
         <!--<br><br>-->
 
 <h1 class="separator", id="sec: Awards & Honors">Awards &amp; Honors </h1>
 <ul>
-<li>Model of excellent student cadres of Nanjing University. <small>2019</small>
-<li>Specialty Prize of Elite Program Scholarships Award. <small>2019</small>
-    <li>Second Prize(2nd in all participants) of Nanjing University Microsoft Club and Tencent Club Hackathon Competition <small>2019</small></li>
-<li>Gold Award of Nanjing University 16th Algorithm Design Competition. <small>2019</small>
-    <li>Finalist of NJU-vivo-2019-hackathon Competition. <small>2019</small>
-    <li>Bronze Award of Nanjing University 15th Algorithm Design Competition. <small>2018</small>
-    <li>Third Prize of Elite Program Scholarships Award. <small>2018</small>
+    <li><b>Model of excellent student cadres</b> of Nanjing University. <small>2019</small>
+    <li><b>Specialty Prize</b> of Elite Program Scholarships Award. <small>2019</small>
+    <li><b>Second Prize</b> (2nd in all participants) of Nanjing University Microsoft Club and Tencent Club Hackathon Competition <small>2019</small></li>
+    <li> <b>Gold Award</b> of Nanjing University 16th Algorithm Design Competition. <small>2019</small>
+    <li><b>Finalist</b> of NJU-vivo-2019-hackathon Competition. <small>2019</small>
+    <li><b>Bronze Award</b> of Nanjing University 15th Algorithm Design Competition. <small>2018</small>
+    <li><b>Third Prize</b> of Elite Program Scholarships Award. <small>2018</small>
 </ul>
-<a href="#title">[go top]</a>
+        <br>
+<a href="#title">[top]</a>
 <br><br>
 
 
@@ -244,7 +244,7 @@ function na() {
             </tbody>
         </table>
 
-<a href="#title">[go top]</a>
+<a href="#title">[top]</a>
 <br>
 
 </div>
